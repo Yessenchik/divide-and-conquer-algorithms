@@ -43,6 +43,19 @@ Implementation of classic divide-and-conquer algorithms with performance metrics
 - **Master Theorem Case 2**: Same as MergeSort
 - **Result**: Θ(n log n)
 
+## Performance Results
+
+Below are the empirical results collected from our experiments:
+
+- **Running Time vs Input Size**
+  ![Time vs n](graphs/time_vs_n.png)
+
+- **Recursion Depth vs Input Size**
+  ![Depth vs n](graphs/depth_vs_n.png)
+
+- **Comparisons vs Input Size**
+  ![Comparisons vs n](graphs/comparisons_vs_n.png)
+
 ## Building and Running
 ```bash
 # Build
@@ -132,3 +145,4 @@ The project implements multiple strategies to control recursion depth and preven
        left = partitionIndex + 1;                  // Iterate (larger)
    }
 ```
+
