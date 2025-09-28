@@ -57,3 +57,78 @@ mvn exec:java -Dexec.mainClass="com.algorithms.cli.AlgorithmRunner" \
 
 # Generate metrics CSV
 java -cp target/classes com.algorithms.cli.AlgorithmRunner quicksort 10000
+```
+# Divide and Conquer Algorithms Implementation
+
+## Table of Contents
+- [Overview](#overview)
+- [Algorithms Implemented](#algorithms-implemented)
+- [Architecture Notes](#architecture-notes)
+- [Recurrence Analysis](#recurrence-analysis)
+- [Performance Results](#performance-results)
+- [Build and Run Instructions](#build-and-run-instructions)
+- [Testing Strategy](#testing-strategy)
+- [Conclusions](#conclusions)
+
+## Overview
+
+This project implements four classic divide-and-conquer algorithms with comprehensive performance metrics collection and analysis. Each algorithm demonstrates different recurrence patterns and complexity classes, validated through both theoretical analysis and empirical measurements.
+
+**Key Features:**
+- Safe recursion patterns with bounded stack depth
+- Reusable memory buffers to minimize allocations
+- Small-n cutoff optimizations
+- Comprehensive metrics tracking (time, depth, comparisons)
+- Automated testing and benchmarking
+
+## Algorithms Implemented
+
+### 1. MergeSort
+- **Time Complexity:** O(n log n) guaranteed
+- **Space Complexity:** O(n) with buffer reuse
+- **Stability:** Yes (preserves relative order)
+- **Key Optimizations:**
+    - Single buffer allocation reused throughout recursion
+    - Insertion sort cutoff for n < 10
+    - Iterative merging to reduce function call overhead
+
+### 2. QuickSort
+- **Time Complexity:** O(n log n) expected, O(n²) worst case
+- **Space Complexity:** O(log n) stack space expected
+- **Stability:** No
+- **Key Optimizations:**
+    - Randomized pivot selection
+    - Tail recursion optimization (recurse on smaller partition)
+    - Bounded stack depth ≈ 2⌊log₂ n⌋ + O(1)
+    - Insertion sort cutoff for small subarrays
+
+### 3. Deterministic Select (Median-of-Medians)
+- **Time Complexity:** O(n) guaranteed
+- **Space Complexity:** O(log n) stack space
+- **Key Features:**
+    - Groups of 5 for optimal constant factors
+    - In-place partitioning
+    - Guaranteed worst-case linear time
+
+### 4. Closest Pair of Points
+- **Time Complexity:** O(n log n)
+- **Space Complexity:** O(n)
+- **Key Features:**
+    - Divide-and-conquer with geometric pruning
+    - Strip optimization (maximum 7-8 point comparisons)
+    - Efficient handling of boundary cases
+
+## Architecture Notes
+
+### Recursion Depth Control
+
+The project implements multiple strategies to control recursion depth and prevent stack overflow:
+
+1. **Tail Recursion Optimization (QuickSort)**
+```java
+   // Recurse on smaller partition, iterate on larger
+   if (partitionIndex - left < right - partitionIndex) {
+       quickSort(arr, left, partitionIndex - 1);  // Recurse (smaller)
+       left = partitionIndex + 1;                  // Iterate (larger)
+   }
+```
