@@ -47,14 +47,17 @@ Implementation of classic divide-and-conquer algorithms with performance metrics
 
 Below are the empirical results collected from our experiments:
 
-- **Running Time vs Input Size**
-  ![Time vs n](graphs/time_vs_n.png)
+- **Running Time vs Input Size**  
+  ![Time vs n](data/graphs/time_complexity.png)
 
-- **Recursion Depth vs Input Size**
-  ![Depth vs n](graphs/depth_vs_n.png)
+- **Recursion Depth vs Input Size**  
+  ![Depth vs n](data/graphs/recursion_depth.png)
 
-- **Comparisons vs Input Size**
-  ![Comparisons vs n](graphs/comparisons_vs_n.png)
+- **Comparisons vs Input Size**  
+  ![Comparisons vs n](data/graphs/constant_factors.png)
+
+- **Cache Effects**  
+  ![Cache effects](data/graphs/cache_effects.png)
 
 ## Building and Running
 ```bash
