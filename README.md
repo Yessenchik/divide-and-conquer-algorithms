@@ -8,7 +8,7 @@ Implementation of classic divide-and-conquer algorithms with performance metrics
 2. **QuickSort** - Randomized with bounded recursion depth
 3. **Deterministic Select** - O(n) median-of-medians selection
 4. **Closest Pair of Points** - O(n log n) 2D geometric algorithm
-
+   
 ## Architecture Notes
 
 ### Recursion Depth Control
