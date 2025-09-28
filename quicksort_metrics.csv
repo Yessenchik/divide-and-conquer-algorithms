@@ -1,0 +1,2 @@
+Algorithm,Size,Time(ns),Depth,Comparisons
+QuickSort,10000000,686726100,13,275974003

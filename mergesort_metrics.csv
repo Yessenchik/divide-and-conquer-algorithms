@@ -1,0 +1,2 @@
+Algorithm,Size,Time(ns),Depth,Comparisons
+MergeSort,10000000,914164600,21,198032469
